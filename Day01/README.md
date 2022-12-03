@@ -37,7 +37,7 @@ Find the Elf carrying the most Calories. How many total Calories is that Elf car
 
 ## Programming
 The Advent of Code gave a data set containing the different amounts of calories that the different elves are carrying. I copied the data set that was given to a file within my program called `DataSet.txt`. Now in order for me to get the answer to the question there are several tasks that I have to complete:
-- [ ] Import the file into the Java program
+- [X] Import the file into the Java program
 - [ ] Separate the imported data set into different arrays for the different elves 
 - [ ] Add all of the different values the elves are carrying to get an overall result
 - [ ] Compare the overall results and print out the largest one
@@ -45,3 +45,6 @@ The Advent of Code gave a data set containing the different amounts of calories 
 There are several different ways that this can be done but what I think I am going to do is create an overall data structure that stores the different calorie amounts the elves are carrying so that I can create functions within that to provide the answer for me. Implementing it this way would mean that all I have to do is create a function within the main program to import the data set and pass the individual elf calorie amounts into the created class. 
 
 There is probably something I am missing but I can always add to this file as I go along as a sort of documentation for all the different mistakes I make while completing this challenge.
+
+## Actual Implementation
+Rather than following the original plan that I set out, I instead decided to create a series of small functions within the main program file that completes the step by step process to finding the largest calorie amount. I did it this way as it was easier to both follow and program.
