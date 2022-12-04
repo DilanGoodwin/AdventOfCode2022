@@ -1,6 +1,6 @@
 # Day 02: Rock Paper Scissors
 
-## Task
+## Part 1
 The Elves begin to set up camp on the beach. To decide whose tent gets to be closest to the snack storage, a giant Rock Paper Scissors tournament is already in progress. \
 Rock Paper Scissors is a game between two players. Each game contains many rounds; in each round, the players each simultaneously choose one of Rock, Paper, or Scissors using a hand shape. Then, a winner for that round is selected: Rock defeats Scissors, Scissors defeats Paper, and Paper defeats Rock. If both players choose the same shape, the round instead ends in a draw. \
 Appreciative of your help yesterday, one Elf gives you an encrypted strategy guide (your puzzle input) that they say will be sure to help you win. "The first column is what your opponent is going to play: A for Rock, B for Paper, and C for Scissors. The second column--" Suddenly, the Elf is called away to help with someone's tent. \
@@ -23,12 +23,13 @@ This strategy guide predicts and recommends the following:
 In this example, if you were to follow the strategy guide, you would get a total score of 15 (8 + 1 + 6). \
 What would your total score be if everything goes exactly according to your strategy guide?
 
-## Programming
+### Programming
 Steps that need to be completed to make the program work:
-- [ ] Import the dataset
-- [ ] Parse the data set input into 2 separate arrays for your moves and your opponents moves
-- [ ] Iterate though each round calculating whether it is a loss, darw or win and adding the result to the score
-- [ ] Go through each move adding the moves value in points to the score
+- [x] Import the dataset
+- [x] Parse the data set input into 2 separate arrays for your moves and your opponents moves
+- [x] Convert moves from `A`,`B`,`C` & `X`,`Y`,`Z` to `R`,`P`,`S` for easier comparison
+- [x] Iterate though each round calculating whether it is a loss, darw or win and adding the result to the score
+- [x] Go through each move adding the moves value in points to the score
 
 Move Score Vaues:
 * Rock = 1
@@ -40,4 +41,33 @@ Round Outcome Value:
 * Draw = 3
 * Win = 6
 
-## Actual Implementation
+## Part 2
+The Elf finishes helping with the tent and sneaks back over to you. "Anyway, the second column says how the round needs to end: X means you need to lose, Y means you need to end the round in a draw, and Z means you need to win. Good luck!" \
+The total score is still calculated in the same way, but now you need to figure out what shape to choose so the round ends as indicated. The example above now goes like this:
+* In the first round, your opponent will choose Rock (A), and you need the round to end in a draw (Y), so you also choose Rock. This gives you a score of 1 + 3 = 4.
+* In the second round, your opponent will choose Paper (B), and you choose Rock so you lose (X) with a score of 1 + 0 = 1.
+* In the third round, you will defeat your opponent's Scissors with Rock for a score of 1 + 6 = 7.
+Now that you're correctly decrypting the ultra top secret strategy guide, you would get a total score of 12. \
+Following the Elf's instructions for the second column, what would your total score be if everything goes exactly according to your strategy guide?
+
+### Programming
+Changes that need to be made to the original program:
+- [x] Parse file function needs to be changed not mess with my moves and instead just add them directly to the file
+- [x] Game result needs to be edited to no longer compare the moves but instead use my moves to work out whether it is a draw or not
+
+Rather than re-working a lot of these functions I think I am instead going to keep the ones that don't need to be changed and then remove the ones that do to replace them with ones that are designed specifically for this version of the challenge.
+
+Move Score Vaues:
+* Rock = 1
+* Paper = 2
+* Scissors = 3
+
+Round Outcome Value:
+* Loss = 0
+* Draw = 3
+* Win = 6
+
+My Move Deciders:
+* X = loss
+* Y = draw
+* Z = win
