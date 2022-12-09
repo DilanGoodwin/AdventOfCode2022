@@ -29,14 +29,12 @@ public class CampCleanup {
             String firstArray=importedFile.get(i).substring(0,importedFile.get(i).indexOf(","));
             String secondArray=importedFile.get(i).substring(importedFile.get(i).indexOf(",")+1);
 
-            int arrayOne1=Integer.parseInt(firstArray.substring(0,firstArray.indexOf("-")));
-            int arrayOne2=Integer.parseInt(firstArray.substring(firstArray.indexOf("-")+1));
-            int arrayTwo1=Integer.parseInt(secondArray.substring(0,secondArray.indexOf("-")));
-            int arrayTwo2=Integer.parseInt(secondArray.substring(secondArray.indexOf("-")+1));
+            int one=Integer.parseInt(firstArray.substring(0,firstArray.indexOf("-")));
+            int two=Integer.parseInt(firstArray.substring(firstArray.indexOf("-")+1));
+            int three=Integer.parseInt(secondArray.substring(0,secondArray.indexOf("-")));
+            int four=Integer.parseInt(secondArray.substring(secondArray.indexOf("-")+1));
 
-            if((arrayOne1<=arrayTwo1)&&(arrayOne2>=arrayTwo2)){
-                numberCrossover++;
-            }else if((arrayOne1>=arrayTwo1)&&(arrayOne2<=arrayTwo2)){
+            if(((one<=three)&&(three<=two))||((one<=four)&&(four<=two))||((three<=one)&&(one<=four))||((three<=two)&&(two<=four))){
                 numberCrossover++;
             }
         }
