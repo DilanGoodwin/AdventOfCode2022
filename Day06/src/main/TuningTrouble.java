@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class TuningTrouble {
   public static void main(String[] args) throws FileNotFoundException {
     System.out.println(checkParsedFile(parseImportedFile(importFile("src/files/DataStream.txt"))));
+    //System.out.println(checkParsedFile(parseImportedFile("mjqjpqmgbljsphdztnvjfqwrcgsmlb")));
   }
 
   public static String importFile(String fileLocation) throws FileNotFoundException{
@@ -25,8 +26,8 @@ public class TuningTrouble {
   public static ArrayList<ArrayList<Character>> parseImportedFile(String importedFile){
     ArrayList<ArrayList<Character>> separatePackets=new ArrayList<>();
 
-    for(int i=0;i<importedFile.length()-3;i++){
-      char[] temp=importedFile.substring(i,(i+4)).toCharArray();
+    for(int i=0;i<importedFile.length()-13;i++){
+      char[] temp=importedFile.substring(i,(i+14)).toCharArray();
       ArrayList<Character> tempArray=new ArrayList<>();
 
       for(int j=0;j<temp.length;j++){
